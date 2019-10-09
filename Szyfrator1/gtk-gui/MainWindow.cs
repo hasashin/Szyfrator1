@@ -104,7 +104,7 @@ public partial class MainWindow
 		this.notebook1 = new global::Gtk.Notebook();
 		this.notebook1.CanFocus = true;
 		this.notebook1.Name = "notebook1";
-		this.notebook1.CurrentPage = 1;
+		this.notebook1.CurrentPage = 0;
 		// Container child notebook1.Gtk.Notebook+NotebookChild
 		this.vbox1 = new global::Gtk.VBox();
 		this.vbox1.Name = "vbox1";
@@ -115,6 +115,7 @@ public partial class MainWindow
 		this.alignment11.TopPadding = ((uint)(10));
 		// Container child alignment11.Gtk.Container+ContainerChild
 		this.hbox1 = new global::Gtk.HBox();
+		this.hbox1.Name = "hbox1";
 		this.hbox1.Spacing = 6;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.RawLabelAlignment = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
