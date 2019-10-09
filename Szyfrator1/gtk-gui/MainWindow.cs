@@ -3,6 +3,8 @@
 
 public partial class MainWindow
 {
+	private global::Gtk.UIManager UIManager;
+
 	private global::Gtk.Notebook notebook1;
 
 	private global::Gtk.VBox vbox1;
@@ -89,6 +91,10 @@ public partial class MainWindow
 	{
 		global::Stetic.Gui.Initialize(this);
 		// Widget MainWindow
+		this.UIManager = new global::Gtk.UIManager();
+		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
+		this.UIManager.InsertActionGroup(w1, 0);
+		this.AddAccelGroup(this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString("Szyfrator 1");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
@@ -98,7 +104,7 @@ public partial class MainWindow
 		this.notebook1 = new global::Gtk.Notebook();
 		this.notebook1.CanFocus = true;
 		this.notebook1.Name = "notebook1";
-		this.notebook1.CurrentPage = 0;
+		this.notebook1.CurrentPage = 1;
 		// Container child notebook1.Gtk.Notebook+NotebookChild
 		this.vbox1 = new global::Gtk.VBox();
 		this.vbox1.Name = "vbox1";
@@ -109,7 +115,6 @@ public partial class MainWindow
 		this.alignment11.TopPadding = ((uint)(10));
 		// Container child alignment11.Gtk.Container+ContainerChild
 		this.hbox1 = new global::Gtk.HBox();
-		this.hbox1.Name = "hbox1";
 		this.hbox1.Spacing = 6;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.RawLabelAlignment = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
@@ -124,10 +129,10 @@ public partial class MainWindow
 		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Tekst w postaci jawnej:");
 		this.RawLabelAlignment.Add(this.label3);
 		this.hbox1.Add(this.RawLabelAlignment);
-		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.RawLabelAlignment]));
-		w2.Position = 0;
-		w2.Expand = false;
-		w2.Fill = false;
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.RawLabelAlignment]));
+		w3.Position = 0;
+		w3.Expand = false;
+		w3.Fill = false;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.TextInputAlignment = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
 		this.TextInputAlignment.Name = "TextInputAlignment";
@@ -149,14 +154,14 @@ public partial class MainWindow
 		this.GtkScrolledWindow.Add(this.InputRawText);
 		this.TextInputAlignment.Add(this.GtkScrolledWindow);
 		this.hbox1.Add(this.TextInputAlignment);
-		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.TextInputAlignment]));
-		w5.Position = 1;
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.TextInputAlignment]));
+		w6.Position = 1;
 		this.alignment11.Add(this.hbox1);
 		this.vbox1.Add(this.alignment11);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.alignment11]));
-		w7.Position = 0;
-		w7.Expand = false;
-		w7.Fill = false;
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.alignment11]));
+		w8.Position = 0;
+		w8.Expand = false;
+		w8.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.hbox3 = new global::Gtk.HBox();
 		this.hbox3.Name = "hbox3";
@@ -168,10 +173,10 @@ public partial class MainWindow
 		this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Klucz szyfrujący:");
 		this.label5.Justify = ((global::Gtk.Justification)(1));
 		this.hbox3.Add(this.label5);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.label5]));
-		w8.Position = 0;
-		w8.Expand = false;
-		w8.Fill = false;
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.label5]));
+		w9.Position = 0;
+		w9.Expand = false;
+		w9.Fill = false;
 		// Container child hbox3.Gtk.Box+BoxChild
 		this.KeyEntryAlignment = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
 		this.KeyEntryAlignment.Name = "KeyEntryAlignment";
@@ -184,8 +189,8 @@ public partial class MainWindow
 		this.KeyCipherEntry.InvisibleChar = '●';
 		this.KeyEntryAlignment.Add(this.KeyCipherEntry);
 		this.hbox3.Add(this.KeyEntryAlignment);
-		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.KeyEntryAlignment]));
-		w10.Position = 1;
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.KeyEntryAlignment]));
+		w11.Position = 1;
 		// Container child hbox3.Gtk.Box+BoxChild
 		this.CipherButtonAlignment = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
 		this.CipherButtonAlignment.Name = "CipherButtonAlignment";
@@ -198,15 +203,15 @@ public partial class MainWindow
 		this.CipherButton.Label = global::Mono.Unix.Catalog.GetString("Szyfruj");
 		this.CipherButtonAlignment.Add(this.CipherButton);
 		this.hbox3.Add(this.CipherButtonAlignment);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.CipherButtonAlignment]));
-		w12.Position = 2;
-		w12.Expand = false;
-		w12.Fill = false;
-		this.vbox1.Add(this.hbox3);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox3]));
-		w13.Position = 1;
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.CipherButtonAlignment]));
+		w13.Position = 2;
 		w13.Expand = false;
 		w13.Fill = false;
+		this.vbox1.Add(this.hbox3);
+		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox3]));
+		w14.Position = 1;
+		w14.Expand = false;
+		w14.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.frame1 = new global::Gtk.Frame();
 		this.frame1.Name = "frame1";
@@ -236,8 +241,8 @@ public partial class MainWindow
 		this.GtkLabel2.UseMarkup = true;
 		this.frame1.LabelWidget = this.GtkLabel2;
 		this.vbox1.Add(this.frame1);
-		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.frame1]));
-		w17.Position = 2;
+		global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.frame1]));
+		w18.Position = 2;
 		this.notebook1.Add(this.vbox1);
 		// Notebook tab
 		this.label10 = new global::Gtk.Label();
@@ -270,10 +275,10 @@ public partial class MainWindow
 		this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Zaszyfrowany tekst:");
 		this.RawLabelAlignment1.Add(this.label4);
 		this.hbox2.Add(this.RawLabelAlignment1);
-		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.RawLabelAlignment1]));
-		w20.Position = 0;
-		w20.Expand = false;
-		w20.Fill = false;
+		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.RawLabelAlignment1]));
+		w21.Position = 0;
+		w21.Expand = false;
+		w21.Fill = false;
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.TextInputAlignment1 = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
 		this.TextInputAlignment1.Name = "TextInputAlignment1";
@@ -295,14 +300,14 @@ public partial class MainWindow
 		this.GtkScrolledWindow2.Add(this.InputSecretText);
 		this.TextInputAlignment1.Add(this.GtkScrolledWindow2);
 		this.hbox2.Add(this.TextInputAlignment1);
-		global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.TextInputAlignment1]));
-		w23.Position = 1;
+		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.TextInputAlignment1]));
+		w24.Position = 1;
 		this.alignment12.Add(this.hbox2);
 		this.vbox2.Add(this.alignment12);
-		global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.alignment12]));
-		w25.Position = 0;
-		w25.Expand = false;
-		w25.Fill = false;
+		global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.alignment12]));
+		w26.Position = 0;
+		w26.Expand = false;
+		w26.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.hbox4 = new global::Gtk.HBox();
 		this.hbox4.Name = "hbox4";
@@ -314,10 +319,10 @@ public partial class MainWindow
 		this.label6.LabelProp = global::Mono.Unix.Catalog.GetString("Klucz deszyfrujący:");
 		this.label6.Justify = ((global::Gtk.Justification)(1));
 		this.hbox4.Add(this.label6);
-		global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.label6]));
-		w26.Position = 0;
-		w26.Expand = false;
-		w26.Fill = false;
+		global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.label6]));
+		w27.Position = 0;
+		w27.Expand = false;
+		w27.Fill = false;
 		// Container child hbox4.Gtk.Box+BoxChild
 		this.KeyEntryAlignment1 = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
 		this.KeyEntryAlignment1.Name = "KeyEntryAlignment1";
@@ -330,8 +335,8 @@ public partial class MainWindow
 		this.KeyDecipherEntry.InvisibleChar = '●';
 		this.KeyEntryAlignment1.Add(this.KeyDecipherEntry);
 		this.hbox4.Add(this.KeyEntryAlignment1);
-		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.KeyEntryAlignment1]));
-		w28.Position = 1;
+		global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.KeyEntryAlignment1]));
+		w29.Position = 1;
 		// Container child hbox4.Gtk.Box+BoxChild
 		this.CipherButtonAlignment1 = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
 		this.CipherButtonAlignment1.Name = "CipherButtonAlignment1";
@@ -344,15 +349,15 @@ public partial class MainWindow
 		this.DecipherButton.Label = global::Mono.Unix.Catalog.GetString("Odszyfruj");
 		this.CipherButtonAlignment1.Add(this.DecipherButton);
 		this.hbox4.Add(this.CipherButtonAlignment1);
-		global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.CipherButtonAlignment1]));
-		w30.Position = 2;
-		w30.Expand = false;
-		w30.Fill = false;
-		this.vbox2.Add(this.hbox4);
-		global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox4]));
-		w31.Position = 1;
+		global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.CipherButtonAlignment1]));
+		w31.Position = 2;
 		w31.Expand = false;
 		w31.Fill = false;
+		this.vbox2.Add(this.hbox4);
+		global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox4]));
+		w32.Position = 1;
+		w32.Expand = false;
+		w32.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.frame2 = new global::Gtk.Frame();
 		this.frame2.Name = "frame2";
@@ -382,11 +387,11 @@ public partial class MainWindow
 		this.GtkLabel4.UseMarkup = true;
 		this.frame2.LabelWidget = this.GtkLabel4;
 		this.vbox2.Add(this.frame2);
-		global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.frame2]));
-		w35.Position = 2;
+		global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.frame2]));
+		w36.Position = 2;
 		this.notebook1.Add(this.vbox2);
-		global::Gtk.Notebook.NotebookChild w36 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1[this.vbox2]));
-		w36.Position = 1;
+		global::Gtk.Notebook.NotebookChild w37 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1[this.vbox2]));
+		w37.Position = 1;
 		// Notebook tab
 		this.label11 = new global::Gtk.Label();
 		this.label11.Name = "label11";
@@ -398,7 +403,7 @@ public partial class MainWindow
 		{
 			this.Child.ShowAll();
 		}
-		this.DefaultWidth = 1030;
+		this.DefaultWidth = 1104;
 		this.DefaultHeight = 680;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
